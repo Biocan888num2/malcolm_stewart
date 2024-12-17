@@ -78,7 +78,7 @@ const MySQL = () => {
           className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-shary-med`} 
           onClick={() => handleButtonClick(1)}
         >
-          Cascading Queries
+          Cascading
         </button> 
       
         <button 

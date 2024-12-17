@@ -21,3 +21,9 @@ export default nextConfig;
 // Production server commands
 //1. 'npm install -g serve'
 //2. 'serve -s dist'
+
+// Making changes to Git
+// 1. 'git status'
+// 2. 'git add .'
+// 3. 'git commit -m "Explain what you updated"'
+// 4. 'git push'

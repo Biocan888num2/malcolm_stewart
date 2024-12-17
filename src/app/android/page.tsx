@@ -39,7 +39,7 @@ const Android = () => {
 
         {activeSwiper === 1 && ( 
           <> 
-            <h3 className='font-droid-sans-pro'>Gym Entry & Member Management System</h3> 
+            <h3 className='font-droid-sans-pro'>Gym Entry & Member Management</h3> 
             <ImageSwiper images={images1} /> 
           </> 
         )} 
