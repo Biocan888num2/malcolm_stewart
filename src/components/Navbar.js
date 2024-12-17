@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import './NavBar.css'; // Import the CSS file
 
 const Navbar = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  // const [activeIndex, setActiveIndex] = useState(null);
   const pathname = usePathname();
 
-  const handleClick = (index) => {
-    setActiveIndex(index);
-  };
+  // const handleClick = (index) => {
+  //   setActiveIndex(index);
+  // };
 
   return (
     <nav className="navbar relative w-full">
@@ -20,25 +20,25 @@ const Navbar = () => {
           <div className="col-span-1 flex flex-col space-y-2">
             <li
               className={`navbar-item inter-extrabold ${pathname === '/about' ? 'active' : ''}`}
-              onClick={() => handleClick(0)}
+              // onClick={() => handleClick(0)}
             >
               <Link href="/about">About</Link>
             </li>
             <li
               className={`navbar-item font-neutraface-bold ${pathname === '/javascript' ? 'active' : ''}`}
-              onClick={() => handleClick(1)}
+              // onClick={() => handleClick(1)}
             >
               <Link href="/javascript">Javascript</Link>
             </li>
             <li
               className={`navbar-item font-droid-sans-pro ${pathname === '/android' ? 'active' : ''}`}
-              onClick={() => handleClick(2)}
+              // onClick={() => handleClick(2)}
             >
               <Link href="/android">Android</Link>
             </li>
             <li
               className={`navbar-item font-sun-semi-bold ${pathname === '/java' ? 'active' : ''}`}
-              onClick={() => handleClick(3)}
+              // onClick={() => handleClick(3)}
             >
               <Link href="/java">Java</Link>
             </li>
@@ -46,25 +46,25 @@ const Navbar = () => {
           <div className="col-span-1 flex flex-col space-y-2 border-l-2 border-white pl-4">
             <li
               className={`navbar-item font-flux ${pathname === '/python' ? 'active' : ''}`}
-              onClick={() => handleClick(4)}
+              // onClick={() => handleClick(4)}
             >
               <Link href="/python">Python</Link>
             </li>
             <li
               className={`navbar-item font-segoe-ui-reg ${pathname === '/vbnet' ? 'active' : ''}`}
-              onClick={() => handleClick(5)}
+              // onClick={() => handleClick(5)}
             >
               <Link href="/vbnet">VB.Net</Link>
             </li>
             <li
               className={`navbar-item font-shary-med ${pathname === '/mysql' ? 'active' : ''}`}
-              onClick={() => handleClick(6)}
+              // onClick={() => handleClick(6)}
             >
               <Link href="/mysql">MySQL</Link>
             </li>
             <li
               className={`navbar-item font-trade-gothic-bold ${pathname === '/deluge_zoho' ? 'active' : ''}`}
-              onClick={() => handleClick(7)}
+              // onClick={() => handleClick(7)}
             >
               <Link href="/deluge_zoho">Deluge(ZOHO)</Link>
             </li>
@@ -73,49 +73,49 @@ const Navbar = () => {
         <div className="hidden md:flex w-full items-center space-x-4">
           <li
             className={`navbar-item inter-extrabold ${pathname === '/about' ? 'active' : ''}`}
-            onClick={() => handleClick(0)}
+            // onClick={() => handleClick(0)}
           >
             <Link href="/about">About</Link>
           </li>
           <li
             className={`navbar-item font-neutraface-bold ${pathname === '/javascript' ? 'active' : ''}`}
-            onClick={() => handleClick(1)}
+            // onClick={() => handleClick(1)}
           >
             <Link href="/javascript">Javascript</Link>
           </li>
           <li
             className={`navbar-item font-droid-sans-pro ${pathname === '/android' ? 'active' : ''}`}
-            onClick={() => handleClick(2)}
+            // onClick={() => handleClick(2)}
           >
             <Link href="/android">Android</Link>
           </li>
           <li
             className={`navbar-item font-sun-semi-bold ${pathname === '/java' ? 'active' : ''}`}
-            onClick={() => handleClick(3)}
+            // onClick={() => handleClick(3)}
           >
             <Link href="/java">Java</Link>
           </li>
           <li
             className={`navbar-item font-flux ${pathname === '/python' ? 'active' : ''}`}
-            onClick={() => handleClick(4)}
+            // onClick={() => handleClick(4)}
           >
             <Link href="/python">Python</Link>
           </li>
           <li
             className={`navbar-item font-segoe-ui-reg ${pathname === '/vbnet' ? 'active' : ''}`}
-            onClick={() => handleClick(5)}
+            // onClick={() => handleClick(5)}
           >
             <Link href="/vbnet">VB.Net</Link>
           </li>
           <li
             className={`navbar-item font-shary-med ${pathname === '/mysql' ? 'active' : ''}`}
-            onClick={() => handleClick(6)}
+            // onClick={() => handleClick(6)}
           >
             <Link href="/mysql">MySQL</Link>
           </li>
           <li
             className={`navbar-item font-trade-gothic-bold ${pathname === '/deluge_zoho' ? 'active' : ''}`}
-            onClick={() => handleClick(7)}
+            // onClick={() => handleClick(7)}
           >
             <Link href="/deluge_zoho">Deluge(ZOHO)</Link>
           </li>
