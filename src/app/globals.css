@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold');
+/* Add other font imports similarly */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Install Dependencies:  'npm install'
+Start Development Server: 'npm run dev'
+Build for Production:     'npm run build'
+Start Production Server:  'npm run start' */
+
+@font-face { 
+  font-family: 'Flux Regular'; 
+  src: url('/fonts/FluxRegular.otf') format('opentype'); 
+}
+
+@font-face { 
+  font-family: 'Flux Bold'; 
+  src: url('/fonts/FluxBold.otf') format('opentype'); 
+}
+
+@font-face { 
+  font-family: 'Neutraface Text'; 
+  src: url('/fonts/NeutrafaceTextBold.otf') format('opentype'); 
+}
+
+@font-face { 
+  font-family: 'Droid Sans Mono Regular'; 
+  src: url('/fonts/DroidSansMonoRegular.ttf') format('truetype'); 
+}
+
+@font-face { 
+  font-family: 'Sun Semi Bold'; 
+  src: url('/fonts/BenSemiBold.ttf') format('truetype'); 
+}
+
+
+@font-face { 
+  font-family: 'Segoe UI Regular'; 
+  src: url('/fonts/SegoeUIRegular.ttf') format('truetype'); 
+}
+
+@font-face { 
+  font-family: 'Shary Medium'; 
+  src: url('/fonts/SharyMedium.otf') format('opentype'); 
+}
+
+@font-face { 
+  font-family: 'Trade Gothic Bold'; 
+  src: url('/fonts/TradeGothicBold.ttf') format('truetype'); 
+}
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: rgb(232, 232, 232);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-item { 
+  text-shadow: 0px 3px 3px #000004; 
+  -webkit-text-stroke: 0.2px #515151; 
+  color: white; 
+  font-size: 21px; 
+  letter-spacing: 0; 
+  line-height: normal; 
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; 
+}
+
+.navbar-item:hover{
+  text-shadow: 0px 3px 3px #000004; 
+  -webkit-text-stroke: 0.3px #000000; 
+  color: #ffae11; 
+  font-size: 22px; 
+  letter-spacing: 0; 
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+.navbar-item.active{
+  text-shadow: 0px 3px 3px #000004; 
+  -webkit-text-stroke: 0.3px #000000; 
+  color: #ffae11; 
+  font-size: 21px; 
+  letter-spacing: 0; 
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+.navbar-label{
+  text-shadow: 0px 3px 3px #000004; 
+  -webkit-text-stroke: 0.3px #000000; 
+  color: #ffae11; 
+  font-size: 17px; 
+  letter-spacing: 0; 
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ****************About***************** */
+.inter-extrabold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+h1.inter-extrabold{
+  text-shadow: 0px 2px 2px #343434; 
+  -webkit-text-stroke: 0.3px #000000; 
+  color: #1da1f2; 
+  font-size: 36px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+  z-index: 1;
+
+}
+
+h2.inter-extrabold {
+  text-shadow: 0px 2px 2px #949494; 
+  color: rgb(0, 0, 0); 
+  font-size: 16px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+  z-index: 1;
+
+}
+
+p.inter-extrabold {
+  text-shadow: 0px 2px 2px #343434; 
+  -webkit-text-stroke: 0.3px #000000; 
+  color: white; 
+  font-size: 18px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+  z-index: 1;
+  
+}
+
+.about-title-div{
+  width: fit-content; 
+  height: fit-content;
+  background: rgb(239, 238, 238);
+  border: 2px solid #1da1f2; 
+  border-radius: 30px;
+  padding: 8px 16px;
+  z-index: 0; 
+  text-align: center;
+
+}
+
+/* ***************Javascript************** */
+.font-neutraface-bold { 
+  font-family: 'Neutraface Text', sans-serif; 
+}
+
+h1.font-neutraface-bold{
+  text-shadow: 0px 2px 2px #343434; 
+  -webkit-text-stroke: 0.5px #000000; 
+  color: #1da1f2; 
+  font-size: 32px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ****************Android*************** */
+.font-droid-sans-pro { 
+  font-family: 'Droid Sans Mono Regular', sans-serif;
+  font-weight: 900; 
+}
+
+h1.font-droid-sans-pro{
+  text-shadow: 0px 2px 2px #575757; 
+  -webkit-text-stroke: 0.03px #242424; 
+  color: #1da1f2; 
+  font-size: 30px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ***************Java************** */
+.font-sun-semi-bold { 
+  font-family: 'Sun Semi Bold', sans-serif;
+  font-weight: 900; 
+}
+
+h1.font-sun-semi-bold{
+  text-shadow: 0px 2px 2px #343434; 
+  -webkit-text-stroke: 0.5px #000000; 
+  color: #1da1f2; 
+  font-size: 32px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ****************Python*************** */
+.font-flux { 
+  font-family: 'Flux Regular', sans-serif; 
+  font-weight: 900;
+}
+
+.font-flux-bold { 
+  font-family: 'Flux Bold', sans-serif; 
+  font-weight: 900;
+}
+
+h1.font-flux-bold{
+  text-shadow: 0px 2px 2px #343434; 
+  -webkit-text-stroke: 0.5px #000000; 
+  color: #1da1f2; 
+  font-size: 34px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ****************VB.Net*************** */
+.font-segoe-ui-reg { 
+  font-family: 'Segoe UI Regular', sans-serif; 
+  font-weight: 900;
+}
+
+h1.font-segoe-ui-reg{
+  text-shadow: 0px 2px 2px #575757; 
+  -webkit-text-stroke: 0.03px #242424; 
+  color: #1da1f2; 
+  font-size: 30px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* *****************MySQL************** */
+.font-shary-med { 
+  font-family: 'Shary Medium', sans-serif; 
+  font-weight: 900;
+}
+
+h1.font-shary-med{
+  text-shadow: 0px 2px 2px #575757; 
+  -webkit-text-stroke: 0.03px #242424;
+  color: #1da1f2; 
+  font-size: 30px; 
+  letter-spacing: 0; 
+  font-weight: 900 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ****************Deluge(ZOHO)*************** */
+.font-trade-gothic-bold { 
+  font-family: 'Trade Gothic Bold', sans-serif; 
+  font-weight: 600;
+}
+
+h1.font-trade-gothic-bold{
+  text-shadow: 0px 2px 2px #343434; 
+  -webkit-text-stroke: 0.5px #000000; 
+  color: #1da1f2; 
+  font-size: 28px; 
+  letter-spacing: 0; 
+  font-weight: 700 !important;
+  line-height: normal; 
+  white-space: nowrap;
+}
+
+/* ****************************************** */
+h3{
+  margin-top: 15px;
+
+}
+
+/* ******************Buttons***************** */
+.button-proj { 
+  background-color: #1da1f2; 
+  color: whitesmoke; 
+  border: 3px solid whitesmoke; 
+  border-radius: 12px; 
+  padding: 4px 8px; 
+  margin: 0 1px; 
+  cursor: pointer; 
+  font-size: 15px; 
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; 
+} 
+
+.button-proj:hover { 
+  background-color: whitesmoke; 
+  color: #1da1f2; 
+  border-color: #1da1f2; 
+}
+
+.button-proj.active { 
+  background-color: whitesmoke; 
+  color: #1da1f2; 
+  border-color: #1da1f2; 
+}

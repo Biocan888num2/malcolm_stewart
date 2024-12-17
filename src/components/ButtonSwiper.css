@@ -1,0 +1,37 @@
+.button-swiper-container { 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 100%; /* Ensure the container only takes up necessary space */ 
+    max-width: 200px; /* Set a maximum width for the swiper */
+    margin: 0;
+    overflow: hidden; /* Hide overflow to prevent scroll bar */ 
+}
+
+.button-swiper { 
+    /* overflow: visible;  */
+    background-color: transparent; 
+    border: none; 
+    height: auto;
+    width: 100%; /* Ensure it only takes up as much space as needed */
+    margin: 0; /* Align to the left */
+    overflow: hidden; /* Hide overflow to prevent scroll bar */
+} 
+
+.button-swiper .btn-swiper-slide { 
+    height: auto; 
+    width: fit-content;
+    /* opacity: 0.7;  */
+    /* Faded effect for adjacent buttons */ 
+    transition: opacity 0.3s;
+    margin: 0;
+} 
+    
+/* .button-swiper .swiper-slide-active { 
+    opacity: 1; 
+    /* Full opacity for the active button 
+} */
+
+.button-swiper .swiper-pagination-bullet { 
+    display: none; 
+}
