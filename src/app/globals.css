@@ -308,7 +308,7 @@ h3{
   padding: 3.5px 7px; 
   margin: 0 1px; 
   cursor: pointer; 
-  font-size: 14px; 
+  font-size: 15px; 
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; 
 } 
 
@@ -319,6 +319,32 @@ h3{
 }
 
 .button-proj.active { 
+  background-color: whitesmoke; 
+  color: #1da1f2; 
+  border-color: #1da1f2; 
+}
+
+/* *********************** */
+
+.button-proj-sm { 
+  background-color: #1da1f2; 
+  color: whitesmoke; 
+  border: 3px solid whitesmoke; 
+  border-radius: 12px; 
+  padding: 3.5px 7px; 
+  margin: 0 1px; 
+  cursor: pointer; 
+  font-size: 14px; 
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; 
+} 
+
+.button-proj-sm:hover { 
+  background-color: whitesmoke; 
+  color: #1da1f2; 
+  border-color: #1da1f2; 
+}
+
+.button-proj-sm.active { 
   background-color: whitesmoke; 
   color: #1da1f2; 
   border-color: #1da1f2; 

@@ -75,21 +75,21 @@ const MySQL = () => {
         <br></br>
 
         <button 
-          className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-shary-med`} 
+          className={`button-proj-sm ${activeSwiper === 1 ? 'active' : ''} font-shary-med`} 
           onClick={() => handleButtonClick(1)}
         >
           Cascading
         </button> 
       
         <button 
-          className={`button-proj ${activeSwiper === 2 ? 'active' : ''} font-shary-med`} 
+          className={`button-proj-sm ${activeSwiper === 2 ? 'active' : ''} font-shary-med`} 
           onClick={() => handleButtonClick(2)}
         >
           Website DB
         </button>
 
         <button 
-          className={`button-proj ${activeSwiper === 3 ? 'active' : ''} font-shary-med`} 
+          className={`button-proj-sm ${activeSwiper === 3 ? 'active' : ''} font-shary-med`} 
           onClick={() => handleButtonClick(3)}
         >
           CRM DB

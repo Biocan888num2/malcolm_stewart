@@ -86,28 +86,28 @@ const Python = () => {
       <br></br>
 
       <button 
-          className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-flux-bold`} 
+          className={`button-proj-sm ${activeSwiper === 1 ? 'active' : ''} font-flux-bold`} 
           onClick={() => handleButtonClick(1)}
         >
           Django
         </button> 
       
         <button 
-          className={`button-proj ${activeSwiper === 2 ? 'active' : ''} font-flux-bold`} 
+          className={`button-proj-sm ${activeSwiper === 2 ? 'active' : ''} font-flux-bold`} 
           onClick={() => handleButtonClick(2)}
         >
           Selenium
         </button>
 
         <button 
-          className={`button-proj ${activeSwiper === 3 ? 'active' : ''} font-flux-bold`} 
+          className={`button-proj-sm ${activeSwiper === 3 ? 'active' : ''} font-flux-bold`} 
           onClick={() => handleButtonClick(3)}
         >
-          Multiple APIs
+          APIs
         </button>
 
         <button 
-          className={`button-proj ${activeSwiper === 4 ? 'active' : ''} font-flux-bold`} 
+          className={`button-proj-sm ${activeSwiper === 4 ? 'active' : ''} font-flux-bold`} 
           onClick={() => handleButtonClick(4)}
         >
           Pandas + Tkinter

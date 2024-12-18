@@ -33,7 +33,7 @@ const DelugeZoho = () => {
 
         {activeSwiper === 1 && ( 
           <> 
-            <h3 className='font-trade-gothic-bold'>Cisco-Meraki Smart Sensors: Estimate Calculator</h3> 
+            <h3 className='font-trade-gothic-bold'>Smart Sensors: Estimate Calculator</h3> 
             <ImageSwiper images={images1} /> 
           </> 
         )} 
