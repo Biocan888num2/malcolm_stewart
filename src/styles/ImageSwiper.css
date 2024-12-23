@@ -88,12 +88,13 @@
 /* Navigation button styles */ 
 .swiper-button-prev, 
 .swiper-button-next { 
-    color: whitesmoke; 
+    color: #1da1f2; 
     /* Change to a contrasting color */ 
 } 
 
 /* Pagination dot styles */ 
-.swiper-pagination-bullet { 
+.swiper-pagination-bullet {
+    margin: 2px; 
     background: whitesmoke; 
     /* Change to a contrasting color */ 
     opacity: 1; 
