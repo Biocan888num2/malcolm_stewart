@@ -94,15 +94,16 @@
 
 /* Pagination dot styles */ 
 .swiper-pagination-bullet {
-    margin: 2px; 
+    margin: 0.5px; 
     background: whitesmoke; 
     /* Change to a contrasting color */ 
-    opacity: 1; 
+    opacity: 0.8;
     /* Ensure full visibility */ 
 } 
 
 /* Active pagination dot style */ 
 .swiper-pagination-bullet-active { 
-    background: #1da1f2; 
+    background: #1da1f2;
+    opacity: 1; 
     /* Or any other distinctive color */
 }    
