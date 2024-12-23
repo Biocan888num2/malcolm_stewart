@@ -84,3 +84,24 @@
 .swiper-image { 
     cursor: pointer; 
 }
+
+/* Navigation button styles */ 
+.swiper-button-prev, 
+.swiper-button-next { 
+    color: whitesmoke; 
+    /* Change to a contrasting color */ 
+} 
+
+/* Pagination dot styles */ 
+.swiper-pagination-bullet { 
+    background: whitesmoke; 
+    /* Change to a contrasting color */ 
+    opacity: 1; 
+    /* Ensure full visibility */ 
+} 
+
+/* Active pagination dot style */ 
+.swiper-pagination-bullet-active { 
+    background: #1da1f2; 
+    /* Or any other distinctive color */
+}    

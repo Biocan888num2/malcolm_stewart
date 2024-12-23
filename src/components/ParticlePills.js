@@ -42,6 +42,7 @@ const ParticlePills = ({ children }) => {
       textureLoader.load('/images/particle_pills/globe.png'),
       textureLoader.load('/images/particle_pills/greek_helmet.png'),
       textureLoader.load('/images/particle_pills/guitar_randy_v.png'),
+      textureLoader.load('/images/particle_pills/temple.png'),
       textureLoader.load('/images/particle_pills/guitar_razorback.png'),
       textureLoader.load('/images/particle_pills/health_lotus.png'),
       textureLoader.load('/images/particle_pills/hockey.png'),
@@ -56,7 +57,6 @@ const ParticlePills = ({ children }) => {
       textureLoader.load('/images/particle_pills/supps.png'),
       textureLoader.load('/images/particle_pills/tanakh.png'),
       textureLoader.load('/images/particle_pills/tcm_meridians.png'),
-      textureLoader.load('/images/particle_pills/temple.png'),
       textureLoader.load('/images/particle_pills/tree.png'),
       // Add more images as needed
     ];
