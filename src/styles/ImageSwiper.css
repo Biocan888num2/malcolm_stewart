@@ -94,10 +94,11 @@
 
 /* Pagination dot styles */ 
 .swiper-pagination-bullet {
-    margin: 0.5px; 
+    margin: 0px;
+    padding: 0px; 
     background: whitesmoke; 
     /* Change to a contrasting color */ 
-    opacity: 0.8;
+    opacity: 0.6;
     /* Ensure full visibility */ 
 } 
 
