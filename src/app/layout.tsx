@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useState, useEffect } from 'react'; // Import useState and useEffect from React
+import { useState, useEffect, useCallback } from 'react'; // Import useState, useEffect, useCallback from React
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-function RootLayout({ 
+export default function RootLayout({ 
   children, 
 }: Readonly<{ 
   children: React.ReactNode; 
@@ -25,7 +25,7 @@ function RootLayout({
   const [isZoomed, setIsZoomed] = useState(false);
   const [lastTouchEnd, setLastTouchEnd] = useState(0);
 
-  const handleDoubleClick = (e: MouseEvent | TouchEvent) => { // Handle both MouseEvent and TouchEvent
+  const handleDoubleClick = useCallback((e: MouseEvent | TouchEvent) => { // Handle both MouseEvent and TouchEvent
     try {
       if (!isZoomed) {
         document.body.style.transform = 'scale(1.5)'; // Adjust zoom scale as necessary
@@ -37,32 +37,30 @@ function RootLayout({
     } catch (error) {
       console.error('Error during double-click zoom:', error);
     }
-  };
+  }, [isZoomed]);
 
-  const handleTouchEnd = (e: TouchEvent) => {
+  const handleTouchEnd = useCallback((e: TouchEvent) => {
     const now = new Date().getTime();
     if (now - lastTouchEnd <= 300) { // Detect double-tap with a time threshold
-      handleDoubleClick(e);
+      handleDoubleClick(e as TouchEvent);
     }
     setLastTouchEnd(now);
-  };
+  }, [lastTouchEnd, handleDoubleClick]);
 
   useEffect(() => {
-    document.addEventListener('dblclick', handleDoubleClick); // Attach native MouseEvent
-    document.addEventListener('touchend', handleTouchEnd); // Attach native TouchEvent
+    document.addEventListener('dblclick', handleDoubleClick as EventListener);
+    document.addEventListener('touchend', handleTouchEnd as EventListener); // Attach native TouchEvent
 
     return () => {
-      document.removeEventListener('dblclick', handleDoubleClick);
-      document.removeEventListener('touchend', handleTouchEnd);
+      document.removeEventListener('dblclick', handleDoubleClick as EventListener);
+      document.removeEventListener('touchend', handleTouchEnd as EventListener);
     };
-  }, [isZoomed, lastTouchEnd]);
+  }, [handleDoubleClick, handleTouchEnd]);
 
   return ( 
     <html lang='en'> 
       <body 
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
-        onDoubleClick={(e) => handleDoubleClick(e.nativeEvent as MouseEvent)} // Handle React event and convert to native
-        onTouchEnd={(e) => handleTouchEnd(e.nativeEvent as TouchEvent)} // Handle React event and convert to native
       > 
         <Navbar /> 
         <main className='flex-grow pb-16'> 
@@ -73,5 +71,3 @@ function RootLayout({
     </html> 
   ); 
 }
-
-export default RootLayout;
