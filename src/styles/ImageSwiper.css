@@ -78,7 +78,8 @@
 .swiper-slide img { 
     max-width: 100%; 
     max-height: 100%; 
-    object-fit: contain; 
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out; 
 }
 
 .swiper-image { 
@@ -109,14 +110,15 @@
     /* Or any other distinctive color */
 }   
 
-/* **************Zoom-In************* */
+/* ***********Zoom-In********** */
+/* ***(NOT CURRENTLY IN-USE)*** */
 .swiper-zoom-container { 
     transition: transform 0.3s ease-in-out; 
     will-change: transform; 
 }
 
 .zoomed { 
-    transform: scale(2); 
+    transform: scale(1.5); 
     /* Adjust the zoom level as needed */ 
     transform-origin: center center;
 }
