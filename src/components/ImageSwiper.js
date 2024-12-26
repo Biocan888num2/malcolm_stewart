@@ -41,6 +41,12 @@ const ImageSwiper = ({ images }) => {
     }; 
   }, [isZoomed]);
 
+  const handleTouchEnd = (event) => { 
+    if (event.detail === 2) { 
+      handleDoubleClick(event); 
+    } 
+  };
+
   const handleImageClick = (src) => { 
     window.open(src, '_blank'); 
   };
