@@ -21,15 +21,14 @@ const ImageSwiper = ({ images }) => {
         document.body.style.transformOrigin = 'center center'; 
         
         // document.body.style.overflow = 'hidden';
-        //  // Prevent scrolling while zoomed 
+        // Prevent scrolling while zoomed 
         
       } else { 
         document.body.style.transform = 'scale(1)'; 
         
         // document.body.style.overflow = 'auto'; 
-        // // Restore scrolling 
-      } 
-      
+        // Restore scrolling 
+      }  
       setIsZoomed(!isZoomed); 
     }; 
     
@@ -52,7 +51,7 @@ const ImageSwiper = ({ images }) => {
   };
 
   return (  
-    <div onTouchEnd={handleTouchEnd} ref={swiperRef}>
+    <div onTouchEnd={handleTouchEnd} ref={handleTouchEnd}>
       <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={50}
@@ -60,7 +59,7 @@ const ImageSwiper = ({ images }) => {
           navigation
           pagination={{ clickable: true }}
           className="swiper" // Apply the swiper class
-          touchEventsTarget="wrapper" // Ensure touch events are handled
+          // touchEventsTarget="wrapper" // Ensure touch events are handled
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="swiper-slide">
