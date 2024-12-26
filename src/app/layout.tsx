@@ -6,6 +6,8 @@ import './globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useState, useEffect } from 'react'; // Import useState and useEffect from React
+import HeadComponent from './Head';
+
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,8 +31,9 @@ export default function RootLayout({
 }>) { 
 
   const [isZoomed, setIsZoomed] = useState(false);
+  const [lastTouchEnd, setLastTouchEnd] = useState(0);
 
-  const handleDoubleClick = (e: MouseEvent) => { // Handle native MouseEvent
+  const handleDoubleClick = (e: MouseEvent | TouchEvent) => { // Handle native MouseEvent
     try {
       if (!isZoomed) {
         document.body.style.transform = 'scale(1.5)'; // Adjust zoom scale as necessary
@@ -44,19 +47,35 @@ export default function RootLayout({
     }
   };
 
+  const handleTouchEnd = (e: TouchEvent) => { 
+    const now = new Date().getTime(); 
+    
+    if (now - lastTouchEnd <= 300) { // Detect double-tap with a time threshold 
+      handleDoubleClick(e); 
+    
+    } 
+    setLastTouchEnd(now); 
+  };
+
   useEffect(() => {
     document.addEventListener('dblclick', handleDoubleClick); // Attach native MouseEvent
+    document.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       document.removeEventListener('dblclick', handleDoubleClick);
+      document.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [isZoomed]);
+  }, [isZoomed, lastTouchEnd]);
 
   return ( 
-    <html lang='en'> 
+    <html lang='en'>
+      <head> 
+        <HeadComponent /> 
+      </head> 
       <body 
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
         onDoubleClick={(e) => handleDoubleClick(e.nativeEvent as MouseEvent)} // Handle React event and convert to native
+        onTouchEnd={(e) => handleTouchEnd(e.nativeEvent as TouchEvent)}
       > 
         <Navbar /> 
         <main className='flex-grow pb-16'> 
