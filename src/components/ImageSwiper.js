@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react'; // Import useEffect for cleanup
 import { Swiper, SwiperSlide } from 'swiper/react'; 
 import 'swiper/css'; 
 import 'swiper/css/navigation'; 
@@ -12,11 +12,14 @@ const ImageSwiper = ({ images }) => {
   const [isZoomed, setIsZoomed] = useState(false);
   const zoomRef = useRef(null);
 
-  const handleDoubleClick = () => {
-    if (isZoomed) {
-      zoomRef.current.style.transform = 'scale(1)';
+  const handleDoubleClick = (e) => {
+    e.stopPropagation();
+    const imgElement = e.target;
+    if (!isZoomed) {
+      imgElement.style.transform = 'scale(2)'; // Adjust zoom scale as necessary
+      imgElement.style.transformOrigin = 'center center'; // Center the zoom
     } else {
-      zoomRef.current.style.transform = 'scale(2)'; // Adjust zoom scale as necessary
+      imgElement.style.transform = 'scale(1)';
     }
     setIsZoomed(!isZoomed);
   };
@@ -33,16 +36,16 @@ const ImageSwiper = ({ images }) => {
       {images.map((image, index) => (
         <SwiperSlide key={index} className="swiper-slide">
           <div
-            ref={zoomRef}
             className={`swiper-zoom-container ${isZoomed ? 'zoomed' : ''}`}
             onDoubleClick={handleDoubleClick}
             onTouchEnd={(event) => {
               if (event.detail === 2) {
-                handleDoubleClick();
+                handleDoubleClick(event);
               }
             }}
           >
             <img 
+              ref={zoomRef}
               src={image} 
               alt={`Slide ${index}`} 
               className="swiper-image"

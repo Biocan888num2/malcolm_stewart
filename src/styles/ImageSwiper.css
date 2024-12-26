@@ -121,9 +121,8 @@
     transform-origin: center center;
 }
 
-/* ***************Modal************** */
-
-/* Modal styles */
+/* ************Modal*********** */ 
+/* ***(NOT CURRENTLY IN-USE)*** */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
