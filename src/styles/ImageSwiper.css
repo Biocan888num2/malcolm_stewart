@@ -109,6 +109,18 @@
     /* Or any other distinctive color */
 }   
 
+/* **************Zoom-In************* */
+.swiper-zoom-container { 
+    transition: transform 0.3s ease-in-out; 
+    will-change: transform; 
+}
+
+.zoomed { 
+    transform: scale(2); 
+    /* Adjust the zoom level as needed */ 
+    transform-origin: center center;
+}
+
 /* ***************Modal************** */
 
 /* Modal styles */
