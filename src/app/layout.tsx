@@ -25,7 +25,7 @@ export default function RootLayout({
   const [isZoomed, setIsZoomed] = useState(false);
   const [lastTouchEnd, setLastTouchEnd] = useState(0);
 
-  const handleDoubleClick = useCallback((e: MouseEvent) => { // Handle both MouseEvent and TouchEvent
+  const handleDoubleClick = useCallback(() => { // Remove the unused e parameter 
     try {
       if (!isZoomed) {
         document.body.style.transform = 'scale(1.5)'; // Adjust zoom scale as necessary
@@ -39,10 +39,10 @@ export default function RootLayout({
     }
   }, [isZoomed]);
 
-  const handleTouchEnd = useCallback((e: TouchEvent) => {
+  const handleTouchEnd = useCallback(() => { // Remove the unused e parameter 
     const now = new Date().getTime();
     if (now - lastTouchEnd <= 300) { // Detect double-tap with a time threshold
-      handleDoubleClick(e as unknown as MouseEvent);
+      handleDoubleClick();
     }
     setLastTouchEnd(now);
   }, [lastTouchEnd, handleDoubleClick]);
