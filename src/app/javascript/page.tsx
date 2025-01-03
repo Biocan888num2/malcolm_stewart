@@ -49,7 +49,7 @@ const Javascript = () => {
           className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-neutraface-bold`} 
           onClick={() => handleButtonClick(1)}
         >
-          HTML + CSS + JQuery + JSON + Bootstrap + MySQL
+          HTML + CSS + JQuery + Bootstrap + MySQL
         </button> 
 
         {activeSwiper === 1 && ( 
