@@ -24,29 +24,28 @@ const ImageSwiper = ({ images }) => {
     updateCustomPagination(swiper.activeIndex);
   }, []);
 
-  const updateCustomPagination = (index) => { 
+  const updateCustomPagination = () => { 
     const paginationEl = document.querySelector('.custom-swiper-pagination'); 
-    paginationEl.innerHTML = renderCustomPagination(index); 
+    paginationEl.innerHTML = renderCustomPagination(); 
   };
 
-  const renderCustomPagination = (index) => { 
+  const renderCustomPagination = () => { 
     const totalImages = images.length; 
     if (totalImages === 1) { 
       return `<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>`; 
-    
     } 
     
     if (totalImages === 2) { 
       return ` 
-        <span class="swiper-pagination-bullet ${index === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-        <span class="swiper-pagination-bullet ${index === 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+        <span class="swiper-pagination-bullet ${activeIndex === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+        <span class="swiper-pagination-bullet ${activeIndex === 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
       `; 
     } 
     
     return ` 
-      <span class="swiper-pagination-bullet ${index === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-      <span class="swiper-pagination-bullet ${index > 0 && index < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-      <span class="swiper-pagination-bullet ${index === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${activeIndex === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${activeIndex > 0 && activeIndex < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${activeIndex === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
     `; 
   };
 
@@ -75,3 +74,4 @@ const ImageSwiper = ({ images }) => {
 };
 
 export default ImageSwiper;
+
