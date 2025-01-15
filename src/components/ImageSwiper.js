@@ -66,6 +66,7 @@ const ImageSwiper = ({ images }) => {
           />
         </SwiperSlide>
       ))}
+      <div className="custom-swiper-pagination"></div>
     </Swiper>
   );
 };
