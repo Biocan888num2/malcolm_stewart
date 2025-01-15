@@ -18,11 +18,18 @@ const ImageSwiper = ({ images }) => {
   useEffect(() => { 
     const swiper = document.querySelector('.swiper').swiper; 
     swiper.on('slideChange', () => { 
-      setActiveIndex(swiper.activeIndex); 
+      setActiveIndex(swiper.activeIndex);
+      updateCustomPagination(swiper.activeIndex); 
     });
+    updateCustomPagination(swiper.activeIndex);
   }, []);
 
-  const renderCustomPagination = () => { 
+  const updateCustomPagination = (index) => { 
+    const paginationEl = document.querySelector('.custom-swiper-pagination'); 
+    paginationEl.innerHTML = renderCustomPagination(index); 
+  };
+
+  const renderCustomPagination = (index) => { 
     const totalImages = images.length; 
     if (totalImages === 1) { 
       return `<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>`; 
@@ -31,15 +38,15 @@ const ImageSwiper = ({ images }) => {
     
     if (totalImages === 2) { 
       return ` 
-        <span class="swiper-pagination-bullet ${activeIndex === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-        <span class="swiper-pagination-bullet ${activeIndex === 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+        <span class="swiper-pagination-bullet ${index === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+        <span class="swiper-pagination-bullet ${index === 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
       `; 
     } 
     
     return ` 
-      <span class="swiper-pagination-bullet ${activeIndex === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-      <span class="swiper-pagination-bullet ${activeIndex > 0 && activeIndex < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-      <span class="swiper-pagination-bullet ${activeIndex === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${index === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${index > 0 && index < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${index === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
     `; 
   };
 
@@ -49,11 +56,7 @@ const ImageSwiper = ({ images }) => {
         spaceBetween={50}
         slidesPerView={1}
         navigation
-        pagination={{ 
-          clickable: true,
-          el: '.custom-swiper-pagination', 
-          renderBullet: () => renderCustomPagination()
-        }}
+        onInit={(swiper) => updateCustomPagination(swiper.activeIndex)}
         className="swiper" // Apply the swiper class
     >
       {images.map((image, index) => (
