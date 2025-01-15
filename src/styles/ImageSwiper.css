@@ -112,7 +112,18 @@
     background: #1da1f2;
     opacity: 1; 
     /* Or any other distinctive color */
-}   
+}  
+
+.custom-swiper-pagination { 
+    position: absolute; 
+    bottom: -10px; /* Adjust this value to move the bullets above the outer edge */ 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
+
+}
 
 /* ***********Zoom-In********** */
 /* ***(NOT CURRENTLY IN-USE)*** */
