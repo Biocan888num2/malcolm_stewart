@@ -96,11 +96,15 @@
 /* Pagination dot styles */ 
 .swiper-pagination-bullet {
     margin: 0px;
-    padding: 0px; 
-    background: rgb(134, 134, 134); 
+    padding: 0px;
+    width: 10px; height: 10px; 
+    background: rgb(134, 134, 134);
+    border-radius: 50%; 
+    margin: 0 5px; 
     /* Change to a contrasting color */ 
     opacity: 0.4;
-    /* Ensure full visibility */ 
+    /* Ensure full visibility */
+    transition: opacity 0.3s; 
 } 
 
 /* Active pagination dot style */ 
