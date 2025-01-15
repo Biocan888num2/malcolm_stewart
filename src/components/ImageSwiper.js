@@ -1,6 +1,6 @@
 "use client";
 
-// import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'; 
 import 'swiper/css'; 
 import 'swiper/css/navigation'; 
@@ -9,9 +9,38 @@ import { Navigation, Pagination } from 'swiper/modules';
 import '../styles/ImageSwiper.css'; // Import the CSS file 
 
 const ImageSwiper = ({ images }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleImageClick = (src) => { 
     window.open(src, '_blank'); 
+  };
+
+  useEffect(() => { 
+    const swiper = document.querySelector('.swiper').swiper; 
+    swiper.on('slideChange', () => { 
+      setActiveIndex(swiper.activeIndex); 
+    });
+  }, []);
+
+  const renderCustomPagination = () => { 
+    const totalImages = images.length; 
+    if (totalImages === 1) { 
+      return `<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>`; 
+    
+    } 
+    
+    if (totalImages === 2) { 
+      return ` 
+        <span class="swiper-pagination-bullet ${activeIndex === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+        <span class="swiper-pagination-bullet ${activeIndex === 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      `; 
+    } 
+    
+    return ` 
+      <span class="swiper-pagination-bullet ${activeIndex === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${activeIndex > 0 && activeIndex < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${activeIndex === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+    `; 
   };
 
   return (
@@ -21,25 +50,9 @@ const ImageSwiper = ({ images }) => {
         slidesPerView={1}
         navigation
         pagination={{ 
-          clickable: true, 
-          renderBullet: (index, className) => { 
-            // Render only 3 pagination dots 
-            if (images.length <= 2 && index < images.length) { 
-              return `<span class="${className}"></span>`; 
-            } 
-            
-            if (images.length > 2) { 
-              if (index === 0 || index === images.length - 1) { 
-                return `<span class="${className}"></span>`; 
-              } 
-              
-              if (index === Math.floor(images.length / 2)) { 
-                return `<span class="${className}"></span>`; 
-              } 
-            } 
-            
-            return ''; 
-          }, 
+          clickable: true,
+          el: '.custom-swiper-pagination', 
+          renderBullet: () => renderCustomPagination()
         }}
         className="swiper" // Apply the swiper class
     >

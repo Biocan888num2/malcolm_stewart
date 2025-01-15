@@ -97,7 +97,7 @@
 .swiper-pagination-bullet {
     margin: 0px;
     padding: 0px; 
-    background: white; 
+    background: rgb(134, 134, 134); 
     /* Change to a contrasting color */ 
     opacity: 0.4;
     /* Ensure full visibility */ 
