@@ -117,8 +117,8 @@
 .custom-swiper-pagination { 
     position: absolute; 
     bottom: -10px; /* Adjust this value to move the bullets above the outer edge */ 
-    left: 50%; 
-    transform: translateX(-50%); 
+    left: 0; 
+    right: 0;
     display: flex; 
     justify-content: center; 
     margin-top: 10px; 
