@@ -11,6 +11,17 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
+
+// CLEAR OLD SHIT OUT
+// **********************
+// delete browsing history
+// **********************
+// Remove-Item -Recurse -Force .next
+// Remove-Item -Recurse -Force node_modules
+// Remove-Item -Recurse -Force dist
+// Remove-Item -Recurse -Force out
+
+
 // FIRST dependency & build check
 // 1. 'npm install'
 // 2. 'npm run build'
