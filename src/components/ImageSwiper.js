@@ -20,7 +20,27 @@ const ImageSwiper = ({ images }) => {
         spaceBetween={50}
         slidesPerView={1}
         navigation
-        pagination={{ clickable: true }}
+        pagination={{ 
+          clickable: true, 
+          renderBullet: (index, className) => { 
+            // Render only 3 pagination dots 
+            if (images.length <= 2 && index < images.length) { 
+              return `<span class="${className}"></span>`; 
+            } 
+            
+            if (images.length > 2) { 
+              if (index === 0 || index === images.length - 1) { 
+                return `<span class="${className}"></span>`; 
+              } 
+              
+              if (index === Math.floor(images.length / 2)) { 
+                return `<span class="${className}"></span>`; 
+              } 
+            } 
+            
+            return ''; 
+          }, 
+        }}
         className="swiper" // Apply the swiper class
     >
       {images.map((image, index) => (
