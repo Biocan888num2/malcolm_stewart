@@ -5,7 +5,7 @@ import ImageSwiper from '../../components/ImageSwiper';
 import ProjectDropdown from '../../components/ProjectDropdown'; // Import the new dropdown component 
 
 const images1 = [ 
-  '/images/mysql/cascading_db_creation/cascading_1.png', 
+  '__BASE_PATH__/images/mysql/cascading_db_creation/cascading_1.png', 
   '/images/mysql/cascading_db_creation/cascading_2.png', 
   '/images/mysql/cascading_db_creation/cascading_3.png',
   '/images/mysql/cascading_db_creation/cascading_5.png',
