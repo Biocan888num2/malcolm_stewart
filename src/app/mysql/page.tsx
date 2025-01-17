@@ -64,8 +64,8 @@ const images3 = [
 
 const projects = [
   { label: 'Cascading', index: 1, url: 'https://github.com/Biocan888num2/sql_files/tree/main/cascading' },
-  { label: 'Website DB', index: 2, url: 'https://github.com/Biocan888num2/sql_files/tree/main/crm_db' },
-  { label: 'CRM DB', index: 3, url: 'https://github.com/Biocan888num2/sql_files/tree/main/website_db' },
+  { label: 'Website DB', index: 2, url: 'https://github.com/Biocan888num2/sql_files/tree/main/website_db' },
+  { label: 'CRM DB', index: 3, url: 'https://github.com/Biocan888num2/sql_files/tree/main/crm_db' },
 ];
 
 const MySQL = () => {
