@@ -30,9 +30,16 @@ export default nextConfig;
 // FIRST dependency & build check
 // 1. 'npm install'
 // 2. 'npm run build'
+// OR
+// 'set NODE_ENV=production
+// npm run build'
+
 
 // Development environment command
-// 1. 'npm run dev'
+// 1. 'npm run dev' 
+// OR 
+// 'set NODE_ENV=development
+// npm run dev'
 
 // Production server commands
 //1. 'npm install -g serve'
