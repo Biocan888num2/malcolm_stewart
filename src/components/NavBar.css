@@ -9,3 +9,54 @@
     box-shadow: 0 4px 10px rgba(22, 22, 22, 0.25);
     /* Adjust the box-shadow as needed */ 
 }
+
+/* NavBar.css */
+
+.hamburger-button {
+    cursor: pointer;
+    font-size: 36px; /* Three times larger than typical button */
+    color: white;
+    font-weight: bold;
+}
+  
+.hamburger-menu {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: -14px;
+    background-color: #1da1f2;
+    padding: 16px;
+    z-index: 1000;
+    border-radius: 10px;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(22, 22, 22, 0.25);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: start; /* Ensure it only takes as much room as the content */
+    text-align: left;
+}
+
+/* NavBar.css */
+
+/* Existing styles... */
+
+.mobile-empty-navbar {
+    background-color: #1da1f2;
+    height: 55px;
+    width: 100%;
+    margin-bottom: 11px;
+    border-bottom: 2px solid rgb(151, 148, 148); 
+    /* Adjust the border-radius as needed */ 
+    box-shadow: 0 4px 10px rgba(22, 22, 22, 0.25);
+    display: block;
+    opacity: 1; /* Ensure full opacity */ 
+    z-index: 1000; /* Ensure it stays on top of other elements */ 
+    position: relative; /* Required for z-index to take effect */
+  }
+  
+  @media (min-width: 768px) {
+    .mobile-empty-navbar {
+      display: none; /* Hide the empty navbar on tablet and larger devices */
+    }
+  }
+  
+  

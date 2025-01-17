@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import ImageSwiper from '../../components/ImageSwiper'; 
+import ImageSwiper from '../../components/ImageSwiper';
+import ProjectDropdown from '../../components/ProjectDropdown'; // Import the new dropdown component 
 
 const images1 = [ 
   '/images/vb_net/movie_rental_crm/movie_crm_0.png', 
@@ -83,32 +84,41 @@ const images2 = [
   '/images/vb_net/words_and_hangman/hang_34.png', 
 ];
 
+const projects = [
+  { label: 'PHP + MySQL', index: 1, url: 'https://github.com/Biocan888num2/movies_crm' },
+  { label: 'JSON + .txt', index: 2, url: 'https://github.com/Biocan888num2/word_games' },
+];
+
 const VBNet = () => {
 
-  const [activeSwiper, setActiveSwiper] = useState(1); 
-  
-  const handleButtonClick = (index: number) => { 
-    setActiveSwiper(index); 
+  const [activeSwiper, setActiveSwiper] = useState<number>(1);
+
+  /**
+   * @param {number} index
+   */
+  const handleProjectSelect = (index: number) => {
+    setActiveSwiper(index);
   };
 
     return (
       <div className="p-4">
         <h1 className="font-segoe-ui-reg">VB.Net stuff</h1>
-        <br></br>
 
-        <button 
-          className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-segoe-ui-reg`} 
-          onClick={() => handleButtonClick(1)}
-        >
-          PHP + MySQL
-        </button> 
-
-        <button 
-          className={`button-proj ${activeSwiper === 2 ? 'active' : ''} font-segoe-ui-reg`} 
-          onClick={() => handleButtonClick(2)}
-        >
-          JSON + .txt
-        </button>
+        <div className="button-div"> 
+          <ProjectDropdown 
+            projects={projects} 
+            onProjectSelect={handleProjectSelect} 
+            activeSwiper={activeSwiper} 
+            fontClass="font-segoe-ui-reg" 
+          /> 
+          <a 
+            href={projects[activeSwiper - 1]?.url} 
+            className="button-git font-segoe-ui-reg" 
+            target="_blank" 
+            rel="noopener noreferrer"  
+          > View code 
+          </a> 
+        </div>
         
         {activeSwiper === 1 && ( 
           <> 

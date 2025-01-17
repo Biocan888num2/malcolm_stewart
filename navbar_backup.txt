@@ -8,8 +8,9 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="navbar relative w-full hidden md:block">
+    <nav className="navbar relative w-full">
       <ul className="flex flex-col lg:flex-row lg:space-x-4 w-full">
+        {/* Mobile and Portrait Tablet View */}
         <div className="lg:hidden grid grid-cols-2 gap-4 w-full">
           <div className="col-span-1 flex flex-col space-y-2">
             <li className={`navbar-item inter-extrabold ${pathname === '/about' ? 'active' : ''}`}>
@@ -36,10 +37,11 @@ const Navbar = () => {
               <Link href="/mysql">MySQL</Link>
             </li>
             <li className={`navbar-item font-trade-gothic-bold ${pathname === '/deluge_zoho' ? 'active' : ''}`}>
-              <Link href="/deluge_zoho">Deluge</Link>
+              <Link href="/deluge_zoho">Deluge(ZOHO)</Link>
             </li>
           </div>
         </div>
+        {/* Landscape Tablet and Desktop View */}
         <div className="hidden lg:flex w-full items-center space-x-4">
           <li className={`navbar-item inter-extrabold ${pathname === '/about' ? 'active' : ''}`}>
             <Link href="/about">About</Link>
@@ -63,7 +65,7 @@ const Navbar = () => {
             <Link href="/mysql">MySQL</Link>
           </li>
           <li className={`navbar-item font-trade-gothic-bold ${pathname === '/deluge_zoho' ? 'active' : ''}`}>
-            <Link href="/deluge_zoho">Deluge</Link>
+            <Link href="/deluge_zoho">Deluge(ZOHO)</Link>
           </li>
           <div className="ml-auto flex justify-end w-full">
             <div className="navbar-label inter-extrabold">
@@ -77,4 +79,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

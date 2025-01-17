@@ -1,13 +1,21 @@
+import HamburgerMenu from './HamburgerMenu'; // Import the HamburgerMenu component
+
 const Footer = () => {
-    return (
-      <footer className="bg-primary p-4 text-right fixed bottom-0 w-full md:hidden z-50">
-        <div className="navbar-label inter-extrabold">
+  return (
+    <footer className="bg-primary p-4 text-right fixed bottom-0 w-full lg:hidden z-50">
+      <div className="flex items-center">
+        <HamburgerMenu /> {/* Include the HamburgerMenu component on the left */}
+        <div className="navbar-label inter-extrabold ml-auto">
           Andrew Warnke<br />
           Junior Developer
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+
+
   

@@ -14,7 +14,8 @@ export default nextConfig;
 
 // CLEAR OLD SHIT OUT
 // **********************
-// delete browsing history
+// CTRL + C in terminal to stop server
+// delete internet browsing history
 // **********************
 // Remove-Item -Recurse -Force .next
 // Remove-Item -Recurse -Force node_modules
@@ -31,7 +32,7 @@ export default nextConfig;
 
 // Production server commands
 //1. 'npm install -g serve'
-//2. 'serve -s dist'
+//2. 'serve -s dist OR npx serve@latest out'
 
 // Making changes to Git
 // 1. 'git status'

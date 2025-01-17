@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ImageSwiper from '../../components/ImageSwiper';
+import ProjectDropdown from '../../components/ProjectDropdown'; // Import the new dropdown component 
 
 const images1 = [ 
   '/images/javascript/website_and_management_system/caballus_1.png', 
@@ -32,25 +33,40 @@ const images1 = [
   '/images/javascript/website_and_management_system/caballus_26.png', 
 ];
 
+const projects = [
+  { label: 'HTML+CSS+MySQL', index: 1, url: 'https://github.com/Biocan888num2/website_management_system' },
+];
+
 const Javascript = () => {
 
-  const [activeSwiper, setActiveSwiper] = useState(1); 
-  
-  const handleButtonClick = (index: number) => { 
-    setActiveSwiper(index); 
+  const [activeSwiper, setActiveSwiper] = useState<number>(1);
+
+  /**
+   * @param {number} index
+   */
+  const handleProjectSelect = (index: number) => {
+    setActiveSwiper(index);
   };
 
     return (
       <div className="p-4">
         <h1 className="font-neutraface-bold">Javascript stuff</h1>
-        <br></br>
 
-        <button 
-          className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-neutraface-bold`} 
-          onClick={() => handleButtonClick(1)}
-        >
-          HTML + CSS + JQuery + Bootstrap + MySQL
-        </button> 
+        <div className="button-div"> 
+          <ProjectDropdown 
+            projects={projects} 
+            onProjectSelect={handleProjectSelect} 
+            activeSwiper={activeSwiper} 
+            fontClass="font-neutraface-bold" 
+          /> 
+          <a 
+            href={projects[activeSwiper - 1]?.url} 
+            className="button-git font-neutraface-bold" 
+            target="_blank" 
+            rel="noopener noreferrer"  
+          > View code 
+          </a> 
+        </div>
 
         {activeSwiper === 1 && ( 
           <> 

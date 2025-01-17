@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import ImageSwiper from '../../components/ImageSwiper'; 
+import ImageSwiper from '../../components/ImageSwiper';
+import ProjectDropdown from '../../components/ProjectDropdown'; // Import the new dropdown component 
 
 const images1 = [ 
   '/images/mysql/cascading_db_creation/cascading_1.png', 
@@ -61,39 +62,42 @@ const images3 = [
   '/images/mysql/database_blockbusted/db_blockbusted_8.png',
 ];
 
+const projects = [
+  { label: 'Cascading', index: 1, url: 'https://github.com/Biocan888num2/sql_files/tree/main/cascading' },
+  { label: 'Website DB', index: 2, url: 'https://github.com/Biocan888num2/sql_files/tree/main/crm_db' },
+  { label: 'CRM DB', index: 3, url: 'https://github.com/Biocan888num2/sql_files/tree/main/website_db' },
+];
+
 const MySQL = () => {
 
-  const [activeSwiper, setActiveSwiper] = useState(1); 
-  
-  const handleButtonClick = (index: number) => { 
-    setActiveSwiper(index); 
+  const [activeSwiper, setActiveSwiper] = useState<number>(1);
+
+  /**
+   * @param {number} index
+   */
+  const handleProjectSelect = (index: number) => {
+    setActiveSwiper(index);
   };
 
     return (
       <div className="p-4">
         <h1 className="font-shary-med">MySQL stuff</h1>
-        <br></br>
 
-        <button 
-          className={`button-proj-sm ${activeSwiper === 1 ? 'active' : ''} font-shary-med`} 
-          onClick={() => handleButtonClick(1)}
-        >
-          Cascading
-        </button> 
-      
-        <button 
-          className={`button-proj-sm ${activeSwiper === 2 ? 'active' : ''} font-shary-med`} 
-          onClick={() => handleButtonClick(2)}
-        >
-          Website DB
-        </button>
-
-        <button 
-          className={`button-proj-sm ${activeSwiper === 3 ? 'active' : ''} font-shary-med`} 
-          onClick={() => handleButtonClick(3)}
-        >
-          CRM DB
-        </button>
+        <div className="button-div"> 
+          <ProjectDropdown 
+            projects={projects} 
+            onProjectSelect={handleProjectSelect} 
+            activeSwiper={activeSwiper} 
+            fontClass="font-shary-med" 
+          /> 
+          <a 
+            href={projects[activeSwiper - 1]?.url} 
+            className="button-git font-shary-med" 
+            target="_blank" 
+            rel="noopener noreferrer"  
+          > View code 
+          </a> 
+        </div>
 
         {activeSwiper === 1 && ( 
           <> 

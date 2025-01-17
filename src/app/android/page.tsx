@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import ImageSwiper from '../../components/ImageSwiper'; 
+import ImageSwiper from '../../components/ImageSwiper';
+import ProjectDropdown from '../../components/ProjectDropdown'; // Import the new dropdown component 
 
 const images1 = [ 
   '/images/android/gym_entry_manager/android_caballus_1.jpg', 
@@ -17,25 +18,39 @@ const images1 = [
   '/images/android/gym_entry_manager/android_caballus_11.jpg',
 ];
 
+const projects = [
+  { label: 'SDK Java', index: 1, url: 'https://github.com/Biocan888num2/gym_member_entry' },
+];
+
 const Android = () => {
 
-  const [activeSwiper, setActiveSwiper] = useState(1); 
-  
-  const handleButtonClick = (index: number) => { 
-    setActiveSwiper(index); 
-  };
+  const [activeSwiper, setActiveSwiper] = useState<number>(1);
 
+  /**
+   * @param {number} index
+   */
+  const handleProjectSelect = (index: number) => {
+    setActiveSwiper(index);
+  };
     return (
       <div className="p-4">
         <h1 className="font-droid-sans-pro">Android stuff</h1>
-        <br></br>
 
-        <button 
-          className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-droid-sans-pro`} 
-          onClick={() => handleButtonClick(1)}
-        >
-          Android SDK (Java)
-        </button> 
+        <div className="button-div"> 
+          <ProjectDropdown 
+            projects={projects} 
+            onProjectSelect={handleProjectSelect} 
+            activeSwiper={activeSwiper} 
+            fontClass="font-droid-sans-pro" 
+          /> 
+          <a 
+            href={projects[activeSwiper - 1]?.url} 
+            className="button-git font-droid-sans-pro" 
+            target="_blank" 
+            rel="noopener noreferrer"  
+          > View code 
+          </a> 
+        </div>
 
         {activeSwiper === 1 && ( 
           <> 

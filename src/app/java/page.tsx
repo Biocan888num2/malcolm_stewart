@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import ImageSwiper from '../../components/ImageSwiper'; 
+import ImageSwiper from '../../components/ImageSwiper';
+import ProjectDropdown from '../../components/ProjectDropdown'; // Import the new dropdown component  
 
 const images1 = [ 
   '/images/java/restaurant_delivery_management_system/fun_free_1.png', 
@@ -38,25 +39,40 @@ const images1 = [
   '/images/java/restaurant_delivery_management_system/fun_free_32.png', 
 ];
 
+const projects = [
+  { label: 'JSON + .txt', index: 1, url: 'https://github.com/Biocan888num2/fun_free_foods' },
+];
+
 const Java = () => {
 
-  const [activeSwiper, setActiveSwiper] = useState(1); 
-  
-  const handleButtonClick = (index: number) => { 
-    setActiveSwiper(index); 
+  const [activeSwiper, setActiveSwiper] = useState<number>(1);
+
+  /**
+   * @param {number} index
+   */
+  const handleProjectSelect = (index: number) => {
+    setActiveSwiper(index);
   };
 
   return (
     <div className="p-4">
       <h1 className="font-sun-semi-bold">Java stuff</h1>
-      <br></br>
 
-      <button 
-        className={`button-proj ${activeSwiper === 1 ? 'active' : ''} font-sun-semi-bold`} 
-        onClick={() => handleButtonClick(1)}
-      >
-        JSON + .txt
-      </button> 
+      <div className="button-div"> 
+        <ProjectDropdown 
+          projects={projects} 
+          onProjectSelect={handleProjectSelect} 
+          activeSwiper={activeSwiper} 
+          fontClass="font-sun-semi-bold" 
+        /> 
+        <a 
+          href={projects[activeSwiper - 1]?.url} 
+          className="button-git font-sun-semi-bold" 
+          target="_blank" 
+          rel="noopener noreferrer"  
+        > View code 
+        </a> 
+      </div>
 
       {activeSwiper === 1 && ( 
         <> 

@@ -34,6 +34,7 @@ export default function RootLayout({
       <body 
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
       > 
+        <div className="mobile-empty-navbar md:hidden"></div> {/* Include the empty navbar */}
         <Navbar /> 
         <main className="flex-grow pb-16"> 
           {children} 
