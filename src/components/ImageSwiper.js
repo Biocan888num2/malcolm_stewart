@@ -31,9 +31,9 @@ const ImageSwiper = ({ images }) => {
     return ` 
       <span class="swiper-pagination-bullet ${index === 0 ? 'swiper-pagination-bullet-active' : ''}"></span> 
       <span class="swiper-pagination-bullet ${index > 0 && index < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
-      <span class="swiper-pagination-bullet ${activeIndex === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
+      <span class="swiper-pagination-bullet ${index === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
     `; 
-  }, [images]);
+  }, [images, activeIndex]);
 
   useEffect(() => { 
     const swiper = document.querySelector('.swiper').swiper; 
