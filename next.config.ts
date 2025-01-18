@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
     loader: 'akamai',
-    path: '/',
+    path: '/malcolm_stewart/',
   },
   /* config options here */
 };

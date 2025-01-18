@@ -44,7 +44,7 @@ Start Production Server:  'npm run start' */
 
 @font-face { 
   font-family: 'Shary Medium'; 
-  src: url('/fonts/SharyMedium.otf') format('opentype'); 
+  src: url('/malcolm_stewart/fonts/SharyMedium.otf') format('opentype'); 
 }
 
 @font-face { 
