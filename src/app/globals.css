@@ -13,33 +13,33 @@ Start Production Server:  'npm run start' */
 
 @font-face { 
   font-family: 'Flux Regular'; 
-  src: url('/fonts/FluxRegular.otf') format('opentype'); 
+  src: url('/malcolm_stewart/fonts/FluxRegular.otf') format('opentype'); 
 }
 
 @font-face { 
   font-family: 'Flux Bold'; 
-  src: url('/fonts/FluxBold.otf') format('opentype'); 
+  src: url('/malcolm_stewart/fonts/FluxBold.otf') format('opentype'); 
 }
 
 @font-face { 
   font-family: 'Neutraface Text'; 
-  src: url('/fonts/NeutrafaceTextBold.otf') format('opentype'); 
+  src: url('/malcolm_stewart/fonts/NeutrafaceTextBold.otf') format('opentype'); 
 }
 
 @font-face { 
   font-family: 'Droid Sans Mono Regular'; 
-  src: url('/fonts/DroidSansMonoRegular.ttf') format('truetype'); 
+  src: url('/malcolm_stewart/fonts/DroidSansMonoRegular.ttf') format('truetype'); 
 }
 
 @font-face { 
   font-family: 'Sun Semi Bold'; 
-  src: url('/fonts/BenSemiBold.ttf') format('truetype'); 
+  src: url('/malcolm_stewart/fonts/BenSemiBold.ttf') format('truetype'); 
 }
 
 
 @font-face { 
   font-family: 'Segoe UI Regular'; 
-  src: url('/fonts/SegoeUIRegular.ttf') format('truetype'); 
+  src: url('/malcolm_stewart/fonts/SegoeUIRegular.ttf') format('truetype'); 
 }
 
 @font-face { 
@@ -49,7 +49,7 @@ Start Production Server:  'npm run start' */
 
 @font-face { 
   font-family: 'Trade Gothic Bold'; 
-  src: url('/fonts/TradeGothicBold.ttf') format('truetype'); 
+  src: url('/malcolm_stewart/fonts/TradeGothicBold.ttf') format('truetype'); 
 }
 
 
