@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'; 
 import 'swiper/css'; 
 import 'swiper/css/navigation'; 
@@ -15,22 +15,7 @@ const ImageSwiper = ({ images }) => {
     window.open(src, '_blank'); 
   };
 
-  useEffect(() => { 
-    const swiper = document.querySelector('.swiper').swiper; 
-    const updatePagination = () => { 
-      const paginationEl = document.querySelector('.custom-swiper-pagination'); 
-      paginationEl.innerHTML = renderCustomPagination(swiper.activeIndex); 
-    }; 
-    
-    swiper.on('slideChange', () => { 
-      setActiveIndex(swiper.activeIndex); 
-      updatePagination(); 
-    }); 
-    
-    updatePagination(); 
-  }, [images]);
-
-  const renderCustomPagination = (index) => { 
+  const renderCustomPagination = useCallback((index) => { 
     const totalImages = images.length; 
     if (totalImages === 1) { 
       return `<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>`; 
@@ -48,21 +33,38 @@ const ImageSwiper = ({ images }) => {
       <span class="swiper-pagination-bullet ${index > 0 && index < totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
       <span class="swiper-pagination-bullet ${activeIndex === totalImages - 1 ? 'swiper-pagination-bullet-active' : ''}"></span> 
     `; 
-  };
+  }, [images]);
+
+  useEffect(() => { 
+    const swiper = document.querySelector('.swiper').swiper; 
+    if (swiper) {
+      const updatePagination = () => { 
+        const paginationEl = document.querySelector('.custom-swiper-pagination'); 
+        paginationEl.innerHTML = renderCustomPagination(swiper.activeIndex); 
+      };
+
+      swiper.on('slideChange', () => { 
+        setActiveIndex(swiper.activeIndex); 
+        updatePagination(); 
+      });
+
+      updatePagination();
+    }
+  }, [images, renderCustomPagination]);
 
   return (
     <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        pagination={{ 
-          clickable: true, 
-          el: '.custom-swiper-pagination', 
-          renderBullet: () => '', 
-          // Ensure custom pagination is handled 
-        }}
-        className="swiper" // Apply the swiper class
+      modules={[Navigation, Pagination]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ 
+        clickable: true, 
+        el: '.custom-swiper-pagination', 
+        renderBullet: () => '', 
+        // Ensure custom pagination is handled 
+      }}
+      className="swiper" // Apply the swiper class
     >
       {images.map((image, index) => (
         <SwiperSlide key={index} className="swiper-slide">
@@ -80,4 +82,3 @@ const ImageSwiper = ({ images }) => {
 };
 
 export default ImageSwiper;
-
