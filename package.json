@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node replacePaths.js",
     "build": "next build",
     "start": "next start",
     "dev": "next dev --turbopack",
