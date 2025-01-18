@@ -7,12 +7,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import '../styles/ImageSwiper.css'; // Import the CSS file 
+import { adjustImagePath } from '../utils/adjustImagePath'; // Import the utility function
 
 const ImageSwiper = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleImageClick = (src) => { 
-    window.open(src, '_blank'); 
+    window.open(adjustImagePath(src), '_blank'); 
   };
 
   const renderCustomPagination = useCallback((index) => { 
@@ -69,7 +70,7 @@ const ImageSwiper = ({ images }) => {
       {images.map((image, index) => (
         <SwiperSlide key={index} className="swiper-slide">
           <img 
-            src={image} 
+            src={adjustImagePath(image)} 
             alt={`Slide ${index}`} 
             onClick={() => handleImageClick(image)} 
             className="swiper-image"

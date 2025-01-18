@@ -1,8 +1,8 @@
-// components/ParticlePills.js
 "use client"; // Ensure this is at the top
 
 import { useEffect } from 'react';
 import * as THREE from 'three';
+import { adjustImagePath } from '../utils/adjustImagePath'; // Import the utility function
 
 const ParticlePills = ({ children }) => {
   useEffect(() => {
@@ -27,37 +27,37 @@ const ParticlePills = ({ children }) => {
     
     window.addEventListener('resize', handleResize);
 
-    // Load multiple pill textures
+    // Load multiple pill textures using adjustImagePath
     const textureLoader = new THREE.TextureLoader();
     const pillTextures = [
-      textureLoader.load('/images/particle_pills/barber.png'),
-      textureLoader.load('/images/particle_pills/calculator.png'),
-      textureLoader.load('/images/particle_pills/chakras.png'),
-      textureLoader.load('/images/particle_pills/chef.png'),
-      textureLoader.load('/images/particle_pills/claddagh.png'),
-      textureLoader.load('/images/particle_pills/columns.png'),
-      textureLoader.load('/images/particle_pills/dev_software.png'),
-      textureLoader.load('/images/particle_pills/dumbbell.png'),
-      textureLoader.load('/images/particle_pills/eagle.png'),
-      textureLoader.load('/images/particle_pills/globe.png'),
-      textureLoader.load('/images/particle_pills/greek_helmet.png'),
-      textureLoader.load('/images/particle_pills/guitar_randy_v.png'),
-      textureLoader.load('/images/particle_pills/temple.png'),
-      textureLoader.load('/images/particle_pills/guitar_razorback.png'),
-      textureLoader.load('/images/particle_pills/health_lotus.png'),
-      textureLoader.load('/images/particle_pills/hockey.png'),
-      textureLoader.load('/images/particle_pills/human_body.png'),
-      textureLoader.load('/images/particle_pills/human_brain.png'),
-      textureLoader.load('/images/particle_pills/human_digestive.png'),
-      textureLoader.load('/images/particle_pills/lightning.png'),
-      textureLoader.load('/images/particle_pills/mountains.png'),
-      textureLoader.load('/images/particle_pills/pasta.png'),
-      textureLoader.load('/images/particle_pills/pestle_mortar.png'),
-      textureLoader.load('/images/particle_pills/sefirot.png'),
-      textureLoader.load('/images/particle_pills/supps.png'),
-      textureLoader.load('/images/particle_pills/tanakh.png'),
-      textureLoader.load('/images/particle_pills/tcm_meridians.png'),
-      textureLoader.load('/images/particle_pills/tree.png'),
+      textureLoader.load(adjustImagePath('/images/particle_pills/barber.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/calculator.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/chakras.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/chef.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/claddagh.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/columns.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/dev_software.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/dumbbell.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/eagle.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/globe.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/greek_helmet.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/guitar_randy_v.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/temple.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/guitar_razorback.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/health_lotus.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/hockey.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/human_body.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/human_brain.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/human_digestive.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/lightning.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/mountains.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/pasta.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/pestle_mortar.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/sefirot.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/supps.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/tanakh.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/tcm_meridians.png')),
+      textureLoader.load(adjustImagePath('/images/particle_pills/tree.png')),
       // Add more images as needed
     ];
 
